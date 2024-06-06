@@ -31,19 +31,21 @@ const MyNavbar = () => {
           className="sm:hidden"
         />
         <NavbarBrand>
-          <IoSearch />
-          <p className="font-bold text-inherit">CUYANIMELIST</p>
+          <Link isBlock="true" className="font-bold text-inherit" href="/">
+            <IoSearch />
+            CUYANIMELIST
+          </Link>
         </NavbarBrand>
       </NavbarContent>
 
       <NavbarContent className="hidden sm:flex gap-4" justify="start">
-        <NavbarItem>
+        {/* <NavbarItem>
           <Link color="foreground" href="#">
             Features
           </Link>
         </NavbarItem>
-        <NavbarItem isActive>
-          <Link href="#" aria-current="page">
+        <NavbarItem>
+          <Link href="#" color="foreground">
             Customers
           </Link>
         </NavbarItem>
@@ -51,9 +53,11 @@ const MyNavbar = () => {
           <Link color="foreground" href="#">
             Integrations
           </Link>
+        </NavbarItem> */}
+        <NavbarItem>
+          <SearchInput />
         </NavbarItem>
       </NavbarContent>
-      <SearchInput />
       <NavbarContent justify="end">
         <Dropdown placement="bottom-end">
           <DropdownTrigger>
@@ -81,13 +85,17 @@ const MyNavbar = () => {
         </Dropdown>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item, index) => (
+        {/* {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link color="foreground" className="w-full" href="#" size="lg">
               {item}
             </Link>
           </NavbarMenuItem>
-        ))}
+        ))} */}
+        <NavbarMenuItem>
+          <p>Cari Anime</p>
+          <SearchInput />
+        </NavbarMenuItem>
       </NavbarMenu>
     </Navbar>
   );
